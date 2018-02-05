@@ -1,6 +1,6 @@
 <?php
 function display_title() {
-	echo "Cart Items";
+	echo "Cart Items || Bacabac Farmers Producer Cooperative";
 }
 function display_content(){
 // session_start();
@@ -22,23 +22,33 @@ if (is_numeric($price) && is_numeric($item)) {
 }
 $total += $subtotal;
 echo "<form method='post' action='quantity_change.php?index=$index'>";
-echo "<div class='col s6'>";
+echo "<div class='col s12 m6 l6'>";
 echo "<div class='card'>";
 echo "<div class='card-img'>";
 echo "<form method='post' action='quantity_change.php?index=$index'>";
 echo "<img class='product-image' src='".$image."'><br>";
 echo "</div>";
 echo "<div class='card-content'>";
-echo "<h5 style='color:#ab47bc;'>" .$name. "</h5><br>";
-echo $description. "<br>";
+echo "<div class='col s12'>";
+echo "<h5 style='color:#ab47bc;'>" .$name. "</h5>";
+echo "</div>";
+echo "<div class='col s12'>";
+echo $description;
+echo "</div>";
+echo "<div class='col s12'>";
 echo "<span style='color:#0d47a1;'> Price: </span> ₱" .$price;
+echo "</div>";
+echo "<div class='col s12'>";
 echo "<br> Quantity: <input type='number' name='quant' min='1' value='$item'>";
-echo "<br> Total price: ". $subtotal;
+echo "</div>";
+echo "<div class='col s12'>";
+echo "Total price: ". $subtotal;
+echo "</div>";
 if ($item == 0) {
 	echo "<div class='req'> $mes </div>";
 }
-echo "<input type='submit' class='btn' name='change_quantity' value='Change Quantity'>";
-echo "<a href='delete_cart_item.php?index=$index'class='modal-close'><input type='button' class='btn red' value='Remove From Cart'></a>";
+echo "<input type='submit' class='btn cart-btn indigo darken-4' name='change_quantity' value='Change Quantity'>";
+echo "<a href='delete_cart_item.php?index=$index'class='modal-close'><input type='button' class='btn red cart-btn' value='Remove From Cart'></a>";
 echo "</form>";
 echo "</div>";
 echo "</div>";
@@ -48,14 +58,16 @@ if (isset($total) && $total != 0) {
 echo "<div class='clearfix center'>";
 echo "<br>";
 echo "<h4> Total:" .$total. "</h4>";
-echo "<a href='menu.php'><input type='button' class='btn green' value='Continue Shopping'></a>";
-echo "<a href='cart_proceed.php'><input type='button' class='btn blue' value='Proceed to Checkout'></a>";
+echo "<a href='menu.php'><input type='button' class='btn green total-btn' value='Continue Shopping'></a>";
+echo "<a href='cart_proceed.php'><input type='button' class='btn blue total-btn' value='Proceed to Checkout'></a>";
 echo "</div>";
 }elseif(!isset($item)){
 	echo "<small class='req'> Your cart is empty </small>";	
 };
 }else{
-	echo "<small class='req'> Your cart is empty </small>";	
+	echo "<div class='home-container white'>";
+	echo "<small class='req'> Your cart is empty </small>";
+	echo "</div>";
 }
 };
 require 'template.php';

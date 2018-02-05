@@ -6,12 +6,12 @@
 	require 'connectdb.php';
 	?>
 
-	<table id="myTable" class="mdl-data-table" cellspacing="0" width="100%">
+	<table id="myTable" class="mdl-data-table responsive" cellspacing="0" width="100%">
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Status</th>
-				<th>Level</th>
+				<th class="hide-on-med-and-down">Status</th>
+				<th class="hide-on-med-and-down">Level</th>
 				<th>Update</th>
 				<th>Delete</th>
 			</tr>
@@ -25,12 +25,12 @@
 		?>
 		<tr>
 			<td><?php echo "$first_name $last_name";?></td>
-			<td><?php if (isset($user_status) && $user_status == 1) {
+			<td class="hide-on-med-and-down"><?php if (isset($user_status) && $user_status == 1) {
 					echo "Active";
 			}else{
 				echo "Deactivate";
 			} ?></td>
-			<td><?php if (isset($user_level) && $user_level == 1) {
+			<td class="hide-on-med-and-down"><?php if (isset($user_level) && $user_level == 1) {
 				echo "Admin";
 			}elseif ($user_level == 2) {
 				echo "Seller";
@@ -38,8 +38,8 @@
 				echo "Customer";
 			}
 			?></td>
-			<td><?php echo "<input type='button' class='btn amber accent-4 modal-trigger update_user_modal' href='#update_user_modal' data-id='$id' value='Update'>" ?> </td>
-			<td><?php echo "<input type='button' class='btn red accent-4 modal-trigger delete_user_modal render_modal' href='#delete_user_modal' data-id='$id' value='Delete'>" ?> </td>
+			<td><?php echo "<button type='button' class='btn amber accent-4 modal-trigger update_user_modal hoverable' href='#update_user_modal' data-id='$id'><i class='material-icons'>edit</i> </button>" ?> </td>
+			<td><?php echo "<button type='button' class='btn red accent-4 modal-trigger delete_user_modal render_modal hoverable' href='#delete_user_modal' data-id='$id'><i class='material-icons'>delete</i></button>" ?> </td>
 		</tr>
 		<?php
 	};

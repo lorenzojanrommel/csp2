@@ -16,17 +16,25 @@ if (isset($_POST['login'])) {
 		$_SESSION['lname'] = $row['last_name'];
 		$_SESSION['address'] = $row['address'];
 		$_SESSION['mobile'] = $row['mobile_number'];
-		if (isset($_SESSION['user_level']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
+		if (isset($_SESSION['username']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
 		header('location: dashboard.php');
-		}elseif(($_SESSION['user_level'] == 2 || $_SESSION['user_level'] == 3) && $_SESSION['user_status'] == 1){
+		}elseif(isset($_SESSION['username']) && ($_SESSION['user_level'] == 2 || $_SESSION['user_level'] == 3) && $_SESSION['user_status'] == 1){
 		header('location: home.php');
 		}elseif ($_SESSION['user_status'] == 2) {
-		// header('location: logout.php');
-		header('location: home.php');
+		$message = "Your Account Has Disabled.\\n Register Again.";
+  echo "<script type='text/javascript'>
+  		alert('$message');
+  		window.location.href = 'http://127.0.0.1/csp2/home.php';
+  		</script>";
+		session_unset();
 		}
 	}else {
-		
-		header('location: home.php');
+		$message = "Username and/or Password incorrect.\\nTry again.";
+  echo "<script type='text/javascript'>
+  		alert('$message');
+  		window.location.href = 'http://127.0.0.1/csp2/home.php';
+  		</script>";
+		// header('location: home.php');
 	}
 }
 if (isset($_POST['register'])) {

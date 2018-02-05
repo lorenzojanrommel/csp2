@@ -9,7 +9,7 @@
           <div id="invoice">
             <div class="invoice-header">
                 <div class="col s12 m6 l6">
-                  <img class="icon" src="assets/img/apple.png" alt="company logo">
+                  <img class="icon" src="assets/img/no-img.jpg" alt="company logo">
                   <h4 class="invoice-title">BFPC</h4>
                   <p class="left-align invoice">To,
                     <br/>
@@ -50,10 +50,10 @@
                 </div>
             </div>
             <div class="invoice-table">
-            	<div class="col s12 m3 l3 cyan">
+            	<div class="col s12 m6 l6 cyan">
                   <h4 class="white-text invoice-text">INVOICE</h4>
                 </div>
-                <div class="col s12 m9 l9 invoice-brief cyan white-text">
+                <div class="col s12 m6 l6 invoice-brief cyan white-text">
                   <div class="row">
                     <div class="col s12 m3 l3">
                     </div>

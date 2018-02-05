@@ -18,7 +18,7 @@
 			<img class='responsive-img user_img' src='assets/img/no-img.jpg'>
 			</div>
 			<div class='col s4'>
-				<input type="button" class="btn green modal-trigger profile-modal" id="profile" value="Edit Your Profile" href="#user-profile-modal" data-id=<?php echo $id; ?>>
+				<input type="button" class="btn green modal-trigger profile-modal" id="profile" value="Edit Profile" href="#user-profile-modal" data-id=<?php echo $id; ?>>
 			</div>
 			<div class='clearfix user-name'>
 			<strong>Name: </strong><?php echo $first_name ." ". $last_name; ?>
@@ -139,7 +139,7 @@
 						?>
 				</div>
 			</div>
-		<?php }else{
+		<?php }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 3){
 		?>
 		<div class="col s12">
 			<div class="order-details-container">
@@ -165,9 +165,6 @@
 						?>
 						<table>
 							<thead>
-								<tr>
-								<th><?php echo $order_id; ?></th>									
-								</tr>
 								<tr>
 									<th>Product Name</th>
 									<th>Quantity</th>
@@ -210,6 +207,8 @@
 			</div>
 		</div>
 		<?php
+		}else{
+			echo "";
 		}
 	}
 	require 'template.php';

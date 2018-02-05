@@ -10,7 +10,7 @@
       echo "<a class='btn-floating btn-large waves-effect waves-light green accent-4 modal-trigger add_item' href='#modal2' id='add_item'><i class='material-icons'>add</i></a>";
     };
     ?>
-  <h4 class="">Category:</h4>
+  <h5 class="">Category:</h5>
     <div class="input-field col s12">
     <form>
     <select name="category">
@@ -29,7 +29,7 @@
   ?>
     </select>
     <label>Sort by:</label>
-    <button class="btn"> Sort By:</button>
+    <button class="btn indigo darken-4"> Sort By:</button>
     </form>
   </div>
   <a href=""></a>
@@ -44,8 +44,8 @@
       $index = $item['id'];
     if($filter == 'All' || $item['category_id'] == $filter){
       if (!isset($_SESSION['username'])) {
-      echo "<div class='col s4'>";
-      echo "<div class='card'>";
+      echo "<div class='col s12 m5 l4'>";
+      echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
       echo "</div>";
@@ -60,6 +60,14 @@
       echo "<div class='col s12 product-price'>";
       echo "Price: ₱" .$item['price'];
       echo "</div>";
+      $sql1 = "SELECT * FROM users WHERE id = $owner";
+      $results1 = mysqli_query($conn, $sql1);
+      while ($row1 = mysqli_fetch_assoc($results1)) {
+        extract($row1);
+      echo "<div class='col s12 product-seller'>";
+      echo "<strong> Seller: </strong> " . $first_name;
+      echo "</div>";
+      }
       echo "</div>";
       echo "</div>";
       echo "</div>";
@@ -69,8 +77,9 @@
       $sql = "SELECT * FROM products WHERE owner_user_id = '$owner'";
       $results = mysqli_query($conn, $sql);
       while ($item = mysqli_fetch_assoc($results)) {
-      echo "<div class='col s4'>";
-      echo "<div class='card'>";
+        extract($item);
+      echo "<div class='col s12 m5 l4'>";
+      echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
       echo "</div>";
@@ -87,16 +96,16 @@
       echo "</div>";
       echo "</div>";
       if (isset($_SESSION['username']) && $_SESSION['user_level'] == '2') {
-     echo "<input type='button' class='btn blue accent-1 btn-product modal-trigger render_modal' href='#modal1' data-index='$index' value='Edit'>"; 
-      echo "<input type='button' class='btn red btn-product modal-trigger delete_render_modal' href='#delete_modal' data-index='$index' value='delete'>";
+     echo "<input type='button' class='btn blue accent-1 btn-product modal-trigger render_modal' href='#modal1' data-index='$id' value='Edit'>"; 
+      echo "<input type='button' class='btn red btn-product modal-trigger delete_render_modal' href='#delete_modal' data-index='$id' value='delete'>";
       echo "</div>";
       echo "</div>";
       echo "</div>";
             };
           };
       }elseif (isset($_SESSION['username']) && $_SESSION['user_level'] == '3') {
-      echo "<div class='col s4'>";
-      echo "<div class='card'>";
+      echo "<div class='col s12 m5 l4'>";
+      echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
       echo "</div>";
@@ -111,10 +120,18 @@
       echo "<div class='col s12 product-price'>";
       echo "Price: ₱" .$item['price'];
       echo "</div>";
+      $sql1 = "SELECT * FROM users WHERE id = $owner";
+      $results1 = mysqli_query($conn, $sql1);
+      while ($row1 = mysqli_fetch_assoc($results1)) {
+        extract($row1);
+      echo "<div class='col s12 product-seller'>";
+      echo "<strong> Seller: </strong> " . $first_name;
+      echo "</div>";
+      }
       echo "</div>";
       echo "<form method='post' action='cart_item_endpoint.php?index=$index'>";
-      echo "QTTY: <input class='quantity' type='number' min='o' class='qttyItem' name='item_qtty'>";
-      echo "<button class='btn light-green accent-3 atc'> Add to cart </button>";
+      echo "QTTY: <input class='quantity hoverable' type='number' min='0' class='qttyItem' name='item_qtty'>";
+      echo "<button class='btn indigo accent-3 atc hoverable'> ADD CART </button>";
       echo "</form>";
       echo "</div>";
       echo "</div>";
@@ -123,7 +140,6 @@
       };
     };
     ?>
-
   <!-- Add item Modal Structure -->
       <div id="modal2" class="modal modal-fixed-footer">
         <div class="modal-content">

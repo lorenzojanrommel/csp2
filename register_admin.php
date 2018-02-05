@@ -14,12 +14,12 @@
 <form method="POST" action="add_admin.php">
 	<div class="row">
 	<div class="input-field col s12">
-	<div class="input-field col s6">
+	<div class="input-field col s12 m6 l6">
 	<i class="fa fa-user-plus prefix" aria-hidden="true"></i>
 	<input type="text" name="fname" class="validate" required>
 	<label for="fname">First Name<span class="req"> *</span></label>
 	</div>
-	<div class="input-field col s6">
+	<div class="input-field col s12 m6 l6">
 	<input type="text" name="lname" class="validate" required>
 	<label for="lname">Last Name<span class="req"> *</span></label>
 	</div>
@@ -30,12 +30,12 @@
 	<label for="email">Email<span class="req"> *</span></label>
      </div>
 	<div class="input-field col s12 clearfix">
-	<div class="input-field col s6">
+	<div class="input-field col s12 m6 l6">
 	<i class="fa fa-phone prefix" aria-hidden="true"></i>
 	<input type="text" name="mobile" class="validate" required>
 	<label>Mobile Number <span class="req"> *</span></label>
 	</div>
-	<div class="input-field col s6">
+	<div class="input-field col s12 m6 l6">
 	<i class="fa fa-calendar prefix" aria-hidden="true"></i>
 	<input type="text" name="birthdate" class="datepicker">
 	<label>Birthdate <span class="req"> *</span></label>

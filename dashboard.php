@@ -3,7 +3,12 @@
 		echo "Bacabac Farmers Producer Cooperative";
 	}
 	function display_content(){
-		echo "<h3> Dashboard </h3>";
+	?>
+		<div class="home-container white">
+			<h3 class="home-title">Dashboard</h3>
+		</div>
+
+		<?php
 	}
 
 	require 'template.php';

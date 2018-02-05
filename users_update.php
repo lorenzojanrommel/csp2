@@ -10,34 +10,34 @@
     $address = ucwords($address);
     $first_name= ucwords($first_name);
     $last_name = ucwords($last_name);
-    echo "<div class='col s2'>";
+    echo "<div class='col s12 m2 l2'>";
     echo "<strong class='user-details'>Name:</strong>";
     echo "</div>";
-    echo "<div class='col s5'>";
+    echo "<div class='col s12 m5 l5'>";
     echo "<input type='text' name='fname' value='$first_name' required>";
     echo "</div>";
-    echo "<div class='col s5'>";
+    echo "<div class='col s12 m5 l5'>";
     echo "<input type='text' name='lname' value='$last_name' required>";
     echo "</div>";
-    echo "<div class='col s2 clearfix'>";
+    echo "<div class='col s12 m2 l2 clearfix'>";
     echo "<br> <strong class='user-details'>Email: </strong>";
     echo "</div>";
     echo "<div class='col s10'>";
     echo "<input type='text' name='email' value='$email' required>";
     echo "</div>";
-    echo "<div class='col s2 clearfix'>";
+    echo "<div class='col s12 m2 l2 clearfix'>";
     echo "<strong class='user-details'>Mobile: </strong>";
     echo "</div>";
-    echo "<div class='col s4'>";
+    echo "<div class='col s12 m4 l4'>";
     echo "<input type='text' name='mobile' value='$mobile_number' required>";
     echo "</div>";
-    echo "<div class='col s2'>";
+    echo "<div class='col s12 m2 l2'>";
     echo "<strong class='user-details'>Birthdate: </strong>";
     echo "</div>";
-    echo "<div class='col s4'>";
+    echo "<div class='col s12 m4 l4'>";
     echo "<input type='text' name='birthdate' class='datepicker' value='$birthdate' required>";
     echo "</div>";
-    echo "<div class='col s2'>";
+    echo "<div class='col s12 m2 l2'>";
     echo "<strong class='user-details'>Gender: </strong>";
     echo "</div>";
     echo " <div class='input-field col s10'>
@@ -52,16 +52,16 @@
     echo"
     </select>
     </div>";
-    echo "<div class='col s2 clearfix'>";
+    echo "<div class='col s12 m2 l2 clearfix'>";
     echo "<strong class='user-details'>Address:</strong>";
     echo "</div>";
     echo "<div class='col s10'>";
     echo "<input type='text' name='address' value='$address' required>";
     echo "</div>";
-    echo "<div class='col s2'>";
+    echo "<div class='col s12 m2 l2'>";
     echo "<strong> Status </strong>";
     echo "</div>";
-    echo "<div class='col s4'>
+    echo "<div class='col s12 m4 l4'>
     <select name='status' required>";
     if (isset($user_status) && $user_status == 1) {
      echo "<option value='1' selected>Active</option>
@@ -73,10 +73,10 @@
     echo "
     </select>
     </div>";
-    echo "<div class='col s2'>";
+    echo "<div class='col s12 m2 l2'>";
     echo "<strong> Level </strong>";
     echo "</div>";
-    echo "<div class='col s4'>
+    echo "<div class='col s12 m4 l4'>
     <select name='level' required>";
     if (isset($user_level) && $user_level == 1) {
      echo "<option value='1' selected>Admin</option>

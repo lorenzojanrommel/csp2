@@ -6,7 +6,7 @@
     $row = mysqli_fetch_assoc($results);
     extract($row);
     // echo "<div class='col s4'>";
-    echo "<form method='post' action='delete.php?index=$index'>"; //to save changes
+    echo "<form method='post' action='delete.php?index=$id'>"; //to save changes
     // echo "<div class='card'>";
     // echo "<div class='card-img'>";
     echo "<img class='product-image' src='".$image."'><br>";
