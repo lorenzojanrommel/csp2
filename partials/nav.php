@@ -4,7 +4,7 @@ $username = isset($_SESSION['username']) ? //if
             : "";                           //false
 
 ?>
-  <nav>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
     <div class="nav-wrapper indigo darken-4">
       <div class="container">
       <a href="index.php" class="brand-logo">BFPC</a>

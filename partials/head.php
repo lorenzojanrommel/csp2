@@ -5,6 +5,8 @@
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<!-- Custome stylesheet -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Import animate CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<!-- jQuery -->
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 <!-- Compiled and minified JavaScript -->
@@ -17,3 +19,4 @@
   	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">

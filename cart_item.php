@@ -8,6 +8,9 @@ require 'connectdb.php';
 if (isset($_SESSION['cart'])) {
 $qtty = $_SESSION['cart'];
 $total = 0;
+echo "<div class='container'>";
+echo "<div class='row'>";
+echo "<div class='col 12'>";
 foreach ($qtty as $index => $item) {
 // if (isset($index)) {
 $sql = "SELECT * FROM products WHERE id = '$index'";
@@ -61,12 +64,22 @@ echo "<h4> Total:" .$total. "</h4>";
 echo "<a href='menu.php'><input type='button' class='btn green total-btn' value='Continue Shopping'></a>";
 echo "<a href='cart_proceed.php'><input type='button' class='btn blue total-btn' value='Proceed to Checkout'></a>";
 echo "</div>";
+echo "</div>";
+echo "</div>";
+echo "</div>";
 }elseif(!isset($item)){
-	echo "<small class='req'> Your cart is empty </small>";	
+	echo "<h2 class='req'> Your cart is empty </h2>";
+	echo "</div>";
+	echo "</div>";
+	echo "</div>";
 };
 }else{
-	echo "<div class='home-container white'>";
-	echo "<small class='req'> Your cart is empty </small>";
+	echo "<div class='container'>";
+	echo "<div class='row'>";
+	echo "<div class='col 12'>";
+	echo "<h2 class='req'> Your cart is empty </h2>";
+	echo "</div>";
+	echo "</div>";
 	echo "</div>";
 }
 };

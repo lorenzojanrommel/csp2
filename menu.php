@@ -5,11 +5,11 @@
   function display_content(){
   $filter = isset($_GET['category']) ? $_GET['category'] : 'All';
     require 'connectdb.php'; //
-    if(isset($_SESSION['user_level']) && $_SESSION['user_level']==2 && $_SESSION['user_status'] == 1){
-    // echo "<button class='btn modal-trigger' id='add_item'  href='#modal2'>Add Item</button>";
-      echo "<a class='btn-floating btn-large waves-effect waves-light green accent-4 modal-trigger add_item' href='#modal2' id='add_item'><i class='material-icons'>add</i></a>";
-    };
     ?>
+  <div class="catego">
+  <div class="container">
+  <div class="row">
+  <div class="col s6">
   <h5 class="">Category:</h5>
     <div class="input-field col s12">
     <form>
@@ -24,13 +24,24 @@
         $category = $row['name'];
 
       echo $filter == $id ? "<option selected value='$id'>$category</option>" : "<option value='$id'> $category </option>" ;
-    // }
     };
   ?>
     </select>
     <label>Sort by:</label>
     <button class="btn indigo darken-4"> Sort By:</button>
     </form>
+  </div>
+  </div>
+  <?php 
+    if(isset($_SESSION['user_level']) && $_SESSION['user_level']==2 && $_SESSION['user_status'] == 1){
+    // echo "<button class='btn modal-trigger' id='add_item'  href='#modal2'>Add Item</button>";
+      echo "<div class='col s6'>";
+      echo "<a class='btn-floating btn-large waves-effect waves-light green accent-4 modal-trigger add_item right' href='#modal2' id='add_item'><i class='material-icons'>add</i></a>";
+      echo "</div>";
+    };
+  ?>
+  </div>
+  </div>
   </div>
   <a href=""></a>
  <?php
@@ -44,7 +55,7 @@
       $index = $item['id'];
     if($filter == 'All' || $item['category_id'] == $filter){
       if (!isset($_SESSION['username'])) {
-      echo "<div class='col s12 m5 l4'>";
+      echo "<div class='col s12 m6 l3'>";
       echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
@@ -78,7 +89,7 @@
       $results = mysqli_query($conn, $sql);
       while ($item = mysqli_fetch_assoc($results)) {
         extract($item);
-      echo "<div class='col s12 m5 l4'>";
+      echo "<div class='col s12 m6 l3'>";
       echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
@@ -104,7 +115,7 @@
             };
           };
       }elseif (isset($_SESSION['username']) && $_SESSION['user_level'] == '3') {
-      echo "<div class='col s12 m5 l4'>";
+      echo "<div class='col s12 m6 l3'>";
       echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
@@ -140,6 +151,8 @@
       };
     };
     ?>
+    </div>
+    </div>
   <!-- Add item Modal Structure -->
       <div id="modal2" class="modal modal-fixed-footer">
         <div class="modal-content">

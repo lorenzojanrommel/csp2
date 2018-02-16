@@ -5,7 +5,9 @@
 	function display_content(){
 	require 'connectdb.php';
 	?>
-
+	<div class="container">
+	<div class="row">
+		<div class="col s12">
 	<table id="myTable" class="mdl-data-table responsive" cellspacing="0" width="100%">
 		<thead>
 			<tr>
@@ -46,6 +48,9 @@
 	?>
 		</tbody>
 	</table>
+      </div>
+      </div>
+      </div>
 	  <!-- Update user modal -->
       <!-- Modal Structure -->
       <div id="update_user_modal" class="modal user-modal update">

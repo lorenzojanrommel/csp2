@@ -84,3 +84,7 @@ function validate(){
 		return true;
 		}
 	}
+	// parallax
+  $(document).ready(function(){
+  $('.parallax').parallax();
+	});

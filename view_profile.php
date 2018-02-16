@@ -4,6 +4,8 @@
 	}
 	function display_content(){
 		?>
+		<div class="container">
+		<div class="row">
 		<div class="col s12">
 		<div class="profile-container">
 			<?php
@@ -125,7 +127,7 @@
 										<tr>
 											<td></td>
 											<td></td>
-											<td></td>
+											<th>Total:</th>
 											<td><?php echo $total; ?></td>
 										</tr>
 							</tbody>
@@ -138,6 +140,8 @@
 							<?php	};
 						?>
 				</div>
+			</div>
+			</div>
 			</div>
 		<?php }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 3){
 		?>
@@ -195,7 +199,7 @@
 								<tr>
 									<td></td>
 									<td></td>
-									<td></td>
+									<th>Total:</th>
 									<td><?php echo $total; ?></td>
 								</tr>
 							</tbody>
@@ -206,9 +210,12 @@
 				?>
 			</div>
 		</div>
+		</div>
+		</div>
 		<?php
 		}else{
-			echo "";
+			echo "</div>";
+			echo "</div>";
 		}
 	}
 	require 'template.php';

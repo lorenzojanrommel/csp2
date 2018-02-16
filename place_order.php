@@ -9,9 +9,13 @@
 		echo "Place Order";
 	}
 	function display_content(){
-		echo "<div class='home-container white'>";
+		echo "<div class='container white'>";
+		echo "<div class='row'>";
+		echo "<div class='col s12'>";
 		echo "Thank you for Shopping <br>";
 		echo "<a href='menu.php'><button class='btn blue'>Continue Shopping</button></a>";
+		echo "</div>";
+		echo "</div>";
 		echo "</div>";
 	}
 

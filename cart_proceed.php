@@ -6,6 +6,9 @@
 	function display_content(){
 		require 'connectdb.php';
 		?>
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
           <div id="invoice">
             <div class="invoice-header">
                 <div class="col s12 m6 l6">
@@ -117,6 +120,9 @@
 								</tbody>
 				</table>
 				</form>
+			</div>
+			</div>
+			</div>
 			</div>
 			<?php
 			// print_r($ids);
